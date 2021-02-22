@@ -1167,7 +1167,8 @@ func docCtr(m *tb.Message) {
 
 	url, _ := B.FileURLByID(m.Document.FileID)
 	if !strings.HasSuffix(url, ".opml") {
-		B.Send(m.Chat, "如果需要导入订阅，请发送正确的 OPML 文件。")
+		// 禁用本条回复
+		// B.Send(m.Chat, "如果需要导入订阅，请发送正确的 OPML 文件。")
 		return
 	}
 
